@@ -1,0 +1,9 @@
+torchvision==0.16.2
+transformers==4.39.3
+pandas==2.2.1
+numpy==1.26.4
+Pillow==10.2.0
+scikit-learn==1.4.1.post1
+lightgbm==4.3.0
+requests==2.31.0
+tqdm==4.66.2
