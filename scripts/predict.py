@@ -23,8 +23,8 @@ def predict(image_path):
         emb = clip.get_image_features(**inputs)[0].cpu().numpy()
 
     emb = emb.reshape(1, -1)  # make batch shape
-    score = model.predict(emb)[0]
-    return score
+    preds = model.predict(emb)[0] # Returns [ups, downs, score]
+    return preds
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -32,5 +32,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
     img_path = sys.argv[1]
-    score = predict(img_path)
-    print(f"Predicted score for '{img_path}': {score:.3f}")
+    preds = predict(img_path)
+    
+    print(f"\nPredictions for '{img_path}':")
+    print(f"  Ups:   {preds[0]:.1f}")
+    print(f"  Downs: {preds[1]:.1f}")
+    print(f"  Score: {preds[2]:.1f}")
