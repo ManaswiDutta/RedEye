@@ -2,7 +2,7 @@ import os
 import json
 import csv
 
-ROOT = "gallery-dl/reddit/memes"         # adjust if needed
+ROOT = "data/raw"         # adjust if needed
 OUT_CSV = "dataset_auto.csv"
 IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp")
 
